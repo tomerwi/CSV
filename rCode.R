@@ -1,14 +1,10 @@
-fileUrl<-"https://github.com/tomerwi/CSV/blob/master/SacramentocrimeJanuary2006.csv"
-crimes<-read.csv("C:/Users/Tomer/Desktop/SacramentocrimeJanuary2006.csv")
+crimes<-read.csv("C:/Users/דודו/Downloads/SacramentocrimeJanuary2006.csv")
 MakeMap(labike$latitude, labike$longitude)
 
 map <- get_map(location = c(lon = mean(crimes$longitude), lat = mean(crimes$latitude)), zoom = 15,  maptype = "satellite", scale = 2)
 # plotting the map with some points on it
-ggmap(map) +  geom_point(data = crimes, aes(x = longitude, y = latitude, colour = ifelse(district>4,F,T), alpha = 0.1), size = 2, shape = 21) +  guides(fill=FALSE, alpha=FALSE, size=FALSE)
+ggmap(map) +  geom_point(data = crimes, aes(x = longitude, y = latitude, colour = ifelse(district>3,F,T), alpha = 0.1), size = 10, shape = 10) +  guides(fill=FALSE, alpha=FALSE, size=FALSE)
 
 
 
 barplot(table(crimes$district),col = "wheat",main = "number of crimes in each district")
-     
-     
-     
