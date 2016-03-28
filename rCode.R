@@ -8,10 +8,6 @@ ggmap(map) +  geom_point(data = crimes, aes(x = longitude, y = latitude, colour 
 
 
 
-newmap<-getMap(resolution = "low")
-plot(newmap,xlim=c(34,38),ylim=c(29,121),asp=1)
-points(newmap$lon, newmap$lat, col = "red", cex = .6)
-
 barplot(table(crimes$district),col = "wheat",main = "number of crimes in each district")
      
      
