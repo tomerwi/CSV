@@ -22,7 +22,8 @@ TrainData <- crimes[,1:4]
 TrainClasses <- crimes[,9]
 TrainClasses<-as.factor(TrainClasses)
 
-
+library("pROC")
+library("e1071")
 control<-trainControl(method="repeatedcv",number=10,repeats=3)
 model<-train(as.data.frame(TrainData),TrainClasses,method = "lvq",preProcess = "scale",trControl =control)
 importance<-varImp(model,scale=FALSE)
