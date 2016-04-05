@@ -24,6 +24,8 @@ map <- get_map(location = c(lon = mean(crimes$longitude), lat = mean(crimes$lati
 
 ggmap(map) +  geom_point(data = crimes, aes(x = longitude, y = latitude, colour = ifelse(district>3,F,T), alpha = 0.1), size = 10, shape = 10) +  guides(fill=FALSE, alpha=FALSE, size=FALSE)
 
+![alt tag](/pic/North_vs_South.jpg)
+
 The photo shows the crimes distribution across Sacremento. 
 the districts were divided crimes - north and south. district number bigger then 3 are in the north while the rest in the south.
 As we can see, more crimes were commited in the south (red color). It is known that south Sacramento is considred less reacher area then the north, which can describe the fact about the crimes distribution. 
