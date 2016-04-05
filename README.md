@@ -16,13 +16,11 @@ Main Columns in the datatable:
 - Latitude & Longtitude - Location parameters, which is used to show the location of the crime in the map
 - ucr_ncic_code - Code which is given by the police to describe the crime severity.
 
+**
 library("ggmap")
 library("ggplot2")
 map <- get_map(location = c(lon = mean(crimes$longitude), lat = mean(crimes$latitude)), zoom = 15,  maptype = "satellite", scale = 2)
-
-**plotting the map with some points on it**
-
-ggmap(map) +  geom_point(data = crimes, aes(x = longitude, y = latitude, colour = ifelse(district>3,F,T), alpha = 0.1), size = 10, shape = 10) +  guides(fill=FALSE, alpha=FALSE, size=FALSE)
+ggmap(map) +  geom_point(data = crimes, aes(x = longitude, y = latitude, colour = ifelse(district>3,F,T), alpha = 0.1), size = 10, shape = 10) +  guides(fill=FALSE, alpha=FALSE, size=FALSE) **
 
 ![alt tag](/pic/North_vs_South.jpg)
 
