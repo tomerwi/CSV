@@ -21,7 +21,7 @@ Main Columns in the datatable:
 
 **library("ggplot2")**
 
-**map <- get_map(location = c(lon = mean(crimes$longitude), lat = mean(crimes$latitude)), zoom = 15,  maptype = "satellite", scale = 2) **
+**map <- get_map(location = c(lon = mean(crimes$longitude), lat = mean(crimes$latitude)), zoom = 15,  maptype = "satellite", scale = ** ** 2) **
 
 **ggmap(map) +  geom_point(data = crimes, aes(x = longitude, y = latitude, colour = ifelse(district>3,F,T), alpha = 0.1), size = 10, shape = 10) +  guides(fill=FALSE, alpha=FALSE, size=FALSE) **
 
