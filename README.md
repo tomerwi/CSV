@@ -79,7 +79,7 @@ We chose the column beat, grid, crimedescr, ucr_ncic_code. The other attribute i
 We can see that beat and grid are the most relevant for the district number. It makes sense beacause they describe the area of the districts. 
 
 
-**Conclusions: **
+**Conclusions:**
 
 1. Looking for a more up-to-date dataset that contains recent crimes, which can be used for comparison between years.
 2. Check for other causes for crimes except economical conditions in the population.
