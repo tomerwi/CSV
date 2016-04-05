@@ -17,6 +17,7 @@ Main Columns in the datatable:
 - ucr_ncic_code - Code which is given by the police to describe the crime severity.
 
 **Code**
+
 library("ggmap")
 
 library("ggplot2")
