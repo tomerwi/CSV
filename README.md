@@ -35,14 +35,18 @@ The photo shows the crimes distribution across Sacremento.
 the districts were divided crimes - north and south. district number bigger then 3 are in the north while the rest in the south.
 As we can see, more crimes were commited in the south (red color). It is known that south Sacramento is considred less reacher area then the north, which can describe the fact about the crimes distribution. 
 
+**Code**
+
 barplot(table(crimes$district),col = "wheat",main = "number of crimes in each district")
 
-library("mlbench")
-library("caret")
+**End code**
+
 
 ![alt tag](/pic/number_of_crimes.jpg)
 
 This plot shows the number of crimes in each district. As we can see, district 3 has the highest crimes number. It is located in south Sacramento, which has more crimes.
+
+**Code**
 
 library("mlbench")
 library("caret")
@@ -64,6 +68,9 @@ model<-train(as.data.frame(TrainData),TrainClasses,method = "lvq",preProcess = "
 importance<-varImp(model,scale=FALSE)
 print(importance)
 plot(importance)
+
+
+**End of code**
 
 ![alt tag](/pic/importance_of_data.jpg)
 
