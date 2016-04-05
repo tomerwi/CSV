@@ -35,6 +35,8 @@ barplot(table(crimes$district),col = "wheat",main = "number of crimes in each di
 library("mlbench")
 library("caret")
 
+![alt tag](/pic/number_of_crimes.jpg)
+
 This plot shows the number of crimes in each district. As we can see, district 3 has the highest crimes number. It is located in south Sacramento, which has more crimes.
 
 
