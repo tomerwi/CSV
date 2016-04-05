@@ -39,6 +39,35 @@ library("caret")
 
 This plot shows the number of crimes in each district. As we can see, district 3 has the highest crimes number. It is located in south Sacramento, which has more crimes.
 
+library("mlbench")
+library("caret")
+
+set.seed(7584)
+crimes$district<-as.factor(crimes$district)
+crimes<-crimes[c(5,7,6,4,1,2,8,9,3)]
+crimes$beat<-as.numeric(crimes$beat)
+crimes$crimedescr<-as.numeric(crimes$crimedescr)
+
+TrainData <- crimes[,1:4]
+
+TrainClasses <- crimes[,9]
+TrainClasses<-as.factor(TrainClasses)
+
+
+control<-trainControl(method="repeatedcv",number=10,repeats=3)
+model<-train(as.data.frame(TrainData),TrainClasses,method = "lvq",preProcess = "scale",trControl =control)
+importance<-varImp(model,scale=FALSE)
+print(importance)
+plot(importance)
+
+![alt tag](/pic/importance_of_data.jpg)
+
+The photo shows the relevance of each coloumn to the class attribute, which is the district number. 
+We chose the column beat, grid, crimedescr, ucr_ncic_code. The other attribute in the table were not taken becouse they were too specific for each record. 
+We can see that beat and grid are the most relevant for the district number. It makes sense beacause they describe the area of the districts. 
+
+
+
 
 
 
