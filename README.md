@@ -51,6 +51,10 @@ This plot shows the number of crimes in each district. As we can see, district 3
 library("mlbench")
 library("caret")
 
+library("pROC")
+
+library("e1071")
+
 set.seed(7584)
 crimes$district<-as.factor(crimes$district)
 crimes<-crimes[c(5,7,6,4,1,2,8,9,3)]
